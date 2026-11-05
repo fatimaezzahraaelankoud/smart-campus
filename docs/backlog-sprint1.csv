@@ -1,0 +1,38 @@
+id,title,owner,service,points,sprint,priority
+T1.01,Relire le cahier des charges et valider périmètre et priorités avec l'encadrant ; rédiger la charte d'équipe,M1,gestion-projet,2,1,Indispensable
+T1.02,Créer le tableau GitHub Projects et le backlog initial ; planifier le sprint,M1,gestion-projet,3,1,Indispensable
+T1.03,"Créer le monorepo (README, modèles PR et tickets, protection des branches)",M1,repo,2,1,Indispensable
+T1.04,"Bibliothèque common : erreur commune, filtre correlationId, enveloppe Kafka, utilitaires JWT",M1,common,4,1,Indispensable
+T1.05,"api-gateway minimale : routage auth, validation JWT via JWKS, CORS, santé",M1,api-gateway,5,1,Indispensable
+T1.06,Animer les daily ; préparer la démonstration de fin de sprint ; tenir le journal de bord,M1,gestion-projet,2,1,Indispensable
+T1.07,Architecture cible et ADR-001 à ADR-003,M2,architecture,3,1,Indispensable
+T1.08,Contrat OpenAPI d'auth-service et schémas JSON des événements campus.user.*,M2,auth-service,2,1,Indispensable
+T1.09,"auth-service : modèle, migrations Flyway, gestion de comptes",M2,auth-service,4,1,Indispensable
+T1.10,"auth-service : login, JWT RS256, JWKS, refresh avec rotation et détection de rejeu, logout, /me",M2,auth-service,5,1,Indispensable
+T1.11,"auth-service : verrouillage, politique de mot de passe, oubli, réinitialisation, changement",M2,auth-service,3,1,Indispensable
+T1.12,auth-service : publication Kafka des événements user.* et password-reset-requested,M2,auth-service,2,1,Indispensable
+T1.13,Guide de conventions back et archétype de service,M3,socle-back,4,1,Indispensable
+T1.14,"student-service : squelette, migrations, CRUD filières",M3,student-service,3,1,Indispensable
+T1.15,student-service : consommateur user.created (profil INCOMPLETE) et lecture du profil avec contrôle de propriété,M3,student-service,4,1,Indispensable
+T1.16,student-service : liste paginée filtrable et PUT /students/{id} (ADM),M3,student-service,3,1,Indispensable
+T1.17,Tests unitaires et d'intégration de T1.14 à T1.16,M3,student-service,3,1,Indispensable
+T1.18,"Initialiser le frontend (Vite, TypeScript, Tailwind, Router, TanStack Query, MSW, Storybook) et le client API",M4,frontend,4,1,Indispensable
+T1.19,"Design system : jetons, composants de base, mise en page",M4,frontend,5,1,Indispensable
+T1.20,Pages login / mot de passe oublié / réinitialisation et garde de routes,M4,frontend,3,1,Indispensable
+T1.21,"teacher-service : squelette, migrations, consommateur user.created",M4,teacher-service,3,1,Indispensable
+T1.22,teacher-service : profil /me et liste des enseignants avec tests,M4,teacher-service,3,1,Indispensable
+T1.23,"docker-compose complet (PostgreSQL 6 bases, Kafka KRaft, Kafka UI, MailHog)",M5,deploy,4,1,Indispensable
+T1.24,Dockerfile standard à deux étapes pour services et frontend,M5,deploy,2,1,Indispensable
+T1.25,"Pipeline GitHub Actions v1 : build, tests, JaCoCo",M5,ci,4,1,Indispensable
+T1.26,"minikube ou k3s, namespaces dev et staging, premier chart Helm",M5,deploy,4,1,Indispensable
+T1.27,"room-service : squelette, migrations, CRUD salles et bâtiments",M5,room-service,4,1,Indispensable
+T1.28,Plan de test du projet et jeu de données de démonstration,M6,qa,4,1,Indispensable
+T1.29,IntegrationTestBase (Testcontainers) et seuils JaCoCo,M6,qa,3,1,Indispensable
+T1.30,Tests d'intégration et de sécurité d'auth-service,M6,qa,4,1,Indispensable
+T1.31,"event-service : squelette, migrations, CRUD d'événements en brouillon",M6,event-service,5,1,Indispensable
+T1.32,Scénarios E2E Playwright de connexion et de contrôle d'accès,M6,qa,2,1,Souhaitable
+T1.33,Modèle de menaces STRIDE et matrice d'accès validée,M7,securite,3,1,Indispensable
+T1.34,Revue de sécurité d'auth-service et de la gateway ; gitleaks et Dependabot en CI,M7,securite,4,1,Indispensable
+T1.35,"Gestion des secrets : Secrets Kubernetes, .env ignoré, clés RSA",M7,securite,2,1,Indispensable
+T1.36,"notification-service : squelette, migrations, consommateur user.created (annuaire, e-mail de bienvenue)",M7,notification-service,5,1,Indispensable
+T1.37,notification-service : liste des notifications et compteur de non-lues,M7,notification-service,3,1,Indispensable

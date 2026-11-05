@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 2000
+        response-timeout: 5s
+      routes:
+        # Sprint 1 : seul auth-service est routé. Les autres routes s'ajoutent au Sprint 2 (tâche T2.01).
+        - id: auth-service
+          uri: ${services.auth.url:http://localhost:8081}
+          predicates:
+            - Path=/api/v1/auth/**,/api/v1/users/**
+
+services:
+  auth:
+    url: ${AUTH_SERVICE_URL:http://localhost:8081}
+
+campus:
+  security:
+    # JWKS publié par auth-service ; l'émetteur doit être identique à celui configuré dans auth-service
+    jwk-set-uri: ${JWK_SET_URI:http://localhost:8081/api/v1/auth/.well-known/jwks.json}
+    issuer: ${JWT_ISSUER:smart-campus}
+  cors:
+    allowed-origin: ${FRONTEND_ORIGIN:http://localhost:3000}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{correlationId:-}]"

@@ -1,0 +1,29 @@
+# Maven / Java
+target/
+*.class
+*.log
+dependency-reduced-pom.xml
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# Secrets et environnement : ne jamais committer
+.env
+*.pem
+*.p12
+*.jks
+secrets/
+
+# Node (frontend)
+node_modules/
+dist/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db

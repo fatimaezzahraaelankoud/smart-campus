@@ -1,0 +1,16 @@
+
+# Chaque propriétaire est relecteur automatique des PR sur son dossier.
+/common/                        @m1
+/services/api-gateway/          @m1
+/services/auth-service/         @m2
+/services/student-service/      @m3
+/services/teacher-service/      @m4
+/services/room-service/         @m5
+/services/event-service/        @m6
+/services/notification-service/ @m7
+/frontend/                      @m4
+/deploy/                        @m5
+/.github/workflows/             @m5
+/monitoring/                    @m5
+/docs/adr/                      @m2
+# Sécurité : relecture obligatoire du responsable du sprint, à mettre à jour à chaque rotation
